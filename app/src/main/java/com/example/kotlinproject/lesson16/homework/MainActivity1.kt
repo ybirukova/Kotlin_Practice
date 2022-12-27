@@ -3,10 +3,7 @@ package com.example.kotlinproject.lesson16.homework
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.kotlinproject.R
-import com.example.kotlinproject.lesson16.SecondActivity
-import java.util.Scanner
 
 class MainActivity1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +11,8 @@ class MainActivity1 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
     }
 
-    override fun onBackPressed() {
+    override fun onStop() {
+        super.onStop()
         val someIntent = Intent(this, SecondActivity1::class.java)
         someIntent.putExtra("SOME_TEXT", "Have a nice day")
         startActivity(someIntent)
